@@ -12,9 +12,13 @@ python-dotenv>=1.0.0             # Load environment variables from .env
 # ============================================================
 # SPEED OPTIMIZATIONS (Free performance boost)
 # ============================================================
-uvloop>=0.19.0                   # 2x faster event loop than asyncio
+# uvloop>=0.19.0                 # 2x faster event loop - UNIX/MAC ONLY (not Windows)
 orjson>=3.9.0                    # 3x faster JSON parsing
 aiohttp>=3.9.0                   # Async HTTP client (faster than requests)
+
+# NOTE: uvloop is commented out because it doesn't support Windows
+# If you're on Linux/Mac, uncomment the line above for 2x faster performance
+# Windows users: The bot will work fine without uvloop!
 
 # ============================================================
 # DATA ANALYSIS & UTILITIES
