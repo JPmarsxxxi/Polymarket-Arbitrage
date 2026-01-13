@@ -1,0 +1,84 @@
+# EMMANUEL'S CODING RULES - FOLLOW STRICTLY
+
+## Rule 1: Verbose Logging Everywhere
+- EVERY function must print what it's doing
+- Use emojis for visual scanning:
+  🔍 Searching/processing
+  ✅ Success
+  ❌ Error
+  ⚠️ Warning
+  📊 Data/stats
+  💾 Saving
+  🤖 AI/Ollama
+  🌐 Network/web
+  📄 Files
+
+- Print:
+  - Function inputs and outputs
+  - Every step of processing
+  - Progress for loops (use tqdm)
+  - All API calls
+  - Database operations
+  - File operations
+  - Full stack traces on errors
+  - Execution time for slow operations
+
+Example:
+```python
+def scrape_jobs(query):
+    print(f"🔍 Starting job search for: {query}")
+    print(f"📊 Found {len(results)} results")
+    print(f"✅ Successfully saved {count} jobs")
+    print(f"⚠️ Warning: Rate limit hit, waiting 5s...")
+    print(f"❌ Error: {error_message}")
+```
+
+## Rule 2: No Code Edits Without Explicit Permission
+
+NEVER rewrite entire files or functions without asking first.
+
+When suggesting changes:
+1. Explain WHY the change is needed
+2. Specify EXACTLY what will change:
+   - File name
+   - Function name
+   - Specific lines
+3. Show BEFORE and AFTER code
+4. Wait for "go ahead" before implementing
+
+BAD (don't do this):
+"Here's the updated file..." [dumps entire new file]
+
+GOOD (do this):
+I need to fix the description scraping because [reason].
+File: 01_scraping_test.py
+Function: scrape_indeed_jobs()
+Lines: ~85-95
+Change: Increase timeout from 2s to 7s and try multiple selectors
+BEFORE:
+time.sleep(2)
+description = driver.find_element(By.ID, 'jobDescriptionText').text
+AFTER:
+wait = WebDriverWait(driver, 7)
+# Try multiple selectors...
+[show proposed code]
+Should I make this change? (waiting for user approval)
+
+## Rule 3: Changes Should Be Localized
+
+- Fix ONE specific thing at a time
+- Don't refactor everything
+- Only touch the broken part
+- Unless explicitly asked to rebuild from scratch
+
+## Rule 4: Test After Each Change
+
+- After every fix, suggest how to test it
+- Don't make multiple changes at once
+- One change → test → next change
+
+## Implementation
+
+Apply these rules to ALL code you write or modify in this project.
+Default to MORE logging, not less.
+When in doubt, ask before editing.
