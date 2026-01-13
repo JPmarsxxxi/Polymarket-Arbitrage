@@ -1,0 +1,32 @@
+# Polymarket Arbitrage Bot - Dependencies
+# Install with: pip install -r requirements.txt
+
+# ============================================================
+# CORE POLYMARKET & BLOCKCHAIN
+# ============================================================
+py-clob-client>=0.20.0          # Official Polymarket CLOB SDK
+web3>=6.0.0                      # Polygon blockchain interactions
+websocket-client>=1.6.0          # WebSocket streaming for real-time data
+python-dotenv>=1.0.0             # Load environment variables from .env
+
+# ============================================================
+# SPEED OPTIMIZATIONS (Free performance boost)
+# ============================================================
+uvloop>=0.19.0                   # 2x faster event loop than asyncio
+orjson>=3.9.0                    # 3x faster JSON parsing
+aiohttp>=3.9.0                   # Async HTTP client (faster than requests)
+
+# ============================================================
+# DATA ANALYSIS & UTILITIES
+# ============================================================
+pandas>=2.0.0                    # Order book analysis
+numpy>=1.24.0                    # Fast calculations
+tqdm>=4.66.0                     # Progress bars for loops
+
+# ============================================================
+# TESTING & DEVELOPMENT (Optional)
+# ============================================================
+pytest>=7.4.0                    # Unit testing
+pytest-asyncio>=0.21.0           # Async test support
+jupyter>=1.0.0                   # Jupyter notebooks for testing
+ipykernel>=6.25.0                # Jupyter kernel
